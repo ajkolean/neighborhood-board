@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate,
     UITableViewDataSource {
     
-    var posts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,19 +21,18 @@ class ViewController: UIViewController, UITableViewDelegate,
         tableView.delegate = self
         tableView.dataSource = self
         
-        var post = Post(imagePath: " ", title: "Post 1", description: "Post 2")
-        var post2 = Post(imagePath: " ", title: "Post 2", description: "This is another post. It post test and stuff.")
-
-        var post3 = Post(imagePath: " ", title: "Post 3", description: "This is the best and worst post ever.")
+        DataService.instance.loadPosts()
         
-        posts.append(post)
-        posts.append(post2)
-        posts.append(post3)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onPostsLoaded), name: "postsLoaded", object: nil)
+
+        
+        
+
+    }
+    
+    func onPostsLoaded(notif: AnyObject) {
         tableView.reloadData()
-
         
-        
-
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -43,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate,
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
+        let post = DataService.instance.loadedPosts[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.configureCell(post)
             return cell
@@ -59,12 +57,14 @@ class ViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return DataService.instance.loadedPosts.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // select a row to load new data
     }
+    
+    
 
  
 
