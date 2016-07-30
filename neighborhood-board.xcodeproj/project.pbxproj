@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		843B770B1D4AF79B00C24330 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B770A1D4AF79B00C24330 /* PostCell.swift */; };
+		84897FE41D4D5799001EB01A /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84897FE31D4D5799001EB01A /* AddPostVC.swift */; };
 		849615A91D4958D70063EBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849615A81D4958D70063EBE6 /* AppDelegate.swift */; };
 		849615AB1D4958D70063EBE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849615AA1D4958D70063EBE6 /* ViewController.swift */; };
 		849615AE1D4958D70063EBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849615AC1D4958D70063EBE6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		843B770A1D4AF79B00C24330 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		84897FE31D4D5799001EB01A /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 		849615A51D4958D70063EBE6 /* neighborhood-board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "neighborhood-board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		849615A81D4958D70063EBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849615AA1D4958D70063EBE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,9 +44,20 @@
 		843B77091D4AF77300C24330 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				849615AC1D4958D70063EBE6 /* Main.storyboard */,
+				849615B11D4958D70063EBE6 /* LaunchScreen.storyboard */,
 				843B770A1D4AF79B00C24330 /* PostCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		84897FE21D4D5742001EB01A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				849615AA1D4958D70063EBE6 /* ViewController.swift */,
+				84897FE31D4D5799001EB01A /* AddPostVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		8496159C1D4958D70063EBE6 = {
@@ -66,13 +79,11 @@
 		849615A71D4958D70063EBE6 /* neighborhood-board */ = {
 			isa = PBXGroup;
 			children = (
+				84897FE21D4D5742001EB01A /* Controller */,
 				843B77091D4AF77300C24330 /* View */,
 				849615BA1D4978590063EBE6 /* Model */,
 				849615A81D4958D70063EBE6 /* AppDelegate.swift */,
-				849615AA1D4958D70063EBE6 /* ViewController.swift */,
-				849615AC1D4958D70063EBE6 /* Main.storyboard */,
 				849615AF1D4958D70063EBE6 /* Assets.xcassets */,
-				849615B11D4958D70063EBE6 /* LaunchScreen.storyboard */,
 				849615B41D4958D70063EBE6 /* Info.plist */,
 			);
 			path = "neighborhood-board";
@@ -159,6 +170,7 @@
 			files = (
 				849615BC1D4978870063EBE6 /* Post.swift in Sources */,
 				849615AB1D4958D70063EBE6 /* ViewController.swift in Sources */,
+				84897FE41D4D5799001EB01A /* AddPostVC.swift in Sources */,
 				849615A91D4958D70063EBE6 /* AppDelegate.swift in Sources */,
 				843B770B1D4AF79B00C24330 /* PostCell.swift in Sources */,
 			);
